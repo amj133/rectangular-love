@@ -1,5 +1,13 @@
-console.log("I'm being executed in the terminal!!!")
+const LoveRectangle = require('./love_rectangle')
 
-var helloWorld = "Hello World!!"
+class GoodLovin {
+  static loveOverlap(rec1, rec2) {
+    const startX = rec2.startX;
+    const startY = rec2.startY;
+    const newWidth = rec1.xLimit - rec2.startX;
+    const newHeight = rec1.yLimit - rec2.startY;
+    return new LoveRectangle(startX, startY, newWidth, newHeight);
+  }
+}
 
-console.log(helloWorld)
+module.exports = GoodLovin

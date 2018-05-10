@@ -27,5 +27,14 @@ describe("class methods", function() {
       assert.equal(overlap.width, 3);
       assert.equal(overlap.height, 1);
     });
+
+    it("returns no lovin when rec1 yLimit <= rec2 startY", function() {
+      const bob = new LoveRectangle(3, 4, 5, 1)
+      const sally = new LoveRectangle(2, 6, 4, 1)
+
+      const overlap = GoodLovin.loveOverlap(bob, sally);
+
+      assert.equal(overlap, "No Lovin' :/");
+    });
   })
 });

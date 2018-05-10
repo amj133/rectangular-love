@@ -4,6 +4,8 @@ class LoveRectangle {
     this.startY = startY;
     this.width = width;
     this.height = height;
+    this.xLimit = startX + width;
+    this.yLimit = startY + height;
   }
 }
 

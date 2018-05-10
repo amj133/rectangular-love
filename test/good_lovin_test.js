@@ -36,5 +36,37 @@ describe("class methods", function() {
 
       assert.equal(overlap, "No Lovin' :/");
     });
+
+    it("returns no lovin when rec1 yLimit <= rec2 startY OR rec2 yLimit < rec1 startY", function() {
+      const bob = new LoveRectangle(3, 4, 5, 1)
+      const sally = new LoveRectangle(2, 6, 4, 1)
+
+      const overlap = GoodLovin.loveOverlap(bob, sally);
+
+      assert.equal(overlap, "No Lovin' :/");
+
+      const billy = new LoveRectangle(3, 4, 5, 1)
+      const suzie = new LoveRectangle(2, 1, 4, 1)
+
+      const overlap2 = GoodLovin.loveOverlap(billy, suzie);
+
+      assert.equal(overlap2, "No Lovin' :/");
+    });
+
+    it("returns no lovin when rec1 xLimit <= rec2 startX OR rec2 xLimit <= rec1 startX", function() {
+      const bob = new LoveRectangle(1, 1, 3, 1)
+      const sally = new LoveRectangle(5, 1, 4, 1)
+
+      const overlap = GoodLovin.loveOverlap(bob, sally);
+
+      assert.equal(overlap, "No Lovin' :/");
+
+      const billy = new LoveRectangle(5, 1, 5, 1)
+      const suzie = new LoveRectangle(1, 1, 4, 1)
+
+      const overlap2 = GoodLovin.loveOverlap(billy, suzie);
+
+      assert.equal(overlap2, "No Lovin' :/");
+    });
   })
 });

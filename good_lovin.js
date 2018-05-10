@@ -3,7 +3,7 @@ const LoveRectangle = require('./love_rectangle')
 class GoodLovin {
 
   static loveOverlap(rec1, rec2) {
-    if(rec1.yLimit <= rec2.startY) {
+    if(rec1.yLimit <= rec2.startY || rec2.yLimit <= rec1.startY || rec1.xLimit <= rec2.startX || rec2.xLimit <= rec1.startX) {
       return "No Lovin' :/";
     }
     if(rec2.startX >= rec1.startX && rec2.startY >= rec1.startY) {

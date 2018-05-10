@@ -16,7 +16,7 @@ describe("class methods", function() {
       assert.equal(overlap.height, 2);
     });
 
-    it("returns overlapping when rec2 < rec1 x && rec2 y < rec1 y", function() {
+    it("returns overlapping when rec2 x < rec1 x && rec2 y > rec1 y", function() {
       const bob = new LoveRectangle(3, 2, 5, 3)
       const sally = new LoveRectangle(2, 4, 4, 6)
 
